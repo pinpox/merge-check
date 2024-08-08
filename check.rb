@@ -1,3 +1,6 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i ruby -p "ruby.withPackages (ps: with ps; [ octokit ])"
+
 require 'octokit'
 require 'optparse'
 
