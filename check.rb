@@ -12,8 +12,8 @@ class GithubClient < Octokit::Client
     super()
   end
 
-  def branch_contains_sha?( sha)
-    status = compare(@repo, "main",  sha).status
+  def branch_contains_sha?(sha)
+    status = compare(@repo, @target_branch,  sha).status
     ['behind', 'identical'].include?(status)
   end
 
