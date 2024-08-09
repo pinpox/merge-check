@@ -63,8 +63,8 @@ end
 
 client = GithubClient.new(options[:repo], options[:branch])
 if options[:pr_num]
-  r= client.pr_included?(options[:pr_num])
-  puts "PR is: " + (r ? "OPEN" : "MERGED")
+  r = client.pr_included?(options[:pr_num])
+  puts "PR #" + options[:pr_num] + "is: " + (r ? "OPEN" : "MERGED")
   exit(!r)
 end
 
